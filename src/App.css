@@ -1,0 +1,243 @@
+:root {
+	--square-size: 84px;
+	--square-font-size: 72px
+}
+.app-board {
+	padding-top: 2em;
+	text-align: center;
+	margin: .5rem;
+}
+.App-logo {
+	-webkit-animation: App-logo-spin infinite 20s linear;
+	animation: App-logo-spin infinite 20s linear;
+	height: 80px;
+}
+.App-header {
+	height: 90px;
+	padding: 20px;
+	color: #fff;
+}
+.App-intro {
+	font-size: large;
+}
+@-webkit-keyframes App-logo-spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(1turn);
+		transform: rotate(1turn);
+	}
+}
+@keyframes App-logo-spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(1turn);
+		transform: rotate(1turn);
+	}
+}
+body {
+	font: 18px Helvetica,Arial,sans-serif;
+	margin: 30px;
+}
+ol,ul {
+	padding-left: 30px;
+}
+.status {
+	margin-bottom: 10px;
+}
+.square {
+	background: #fff;
+	border: 1.7px solid #000;
+	float: left;
+	font-size: var(--square-font-size);
+	font-weight: 700;
+	line-height: var(--square-size);
+	height: var(--square-size);
+	margin-right: -1px;
+	margin-top: -1px;
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+	width: var(--square-size);
+	margin-bottom: 0;
+	border-radius: 0;
+}
+.square:focus {
+	outline: none;
+}
+.board-row:first-child > .square {
+	border-top: none;
+}
+.board-row:last-child > .square {
+	border-bottom: none;
+}
+.board-row>.square:first-child {
+	border-left: none;
+}
+.board-row>.square:last-child {
+	border-right: none;
+}
+.kbd-navigation .square:focus {
+	background: #ddd;
+}
+.game {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+.board-row,.game {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.board-row {
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+.board-row:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+.game-info {
+	margin-bottom: 1em;
+}
+.winner {
+	-webkit-animation: blinker 0.5s linear infinite;
+	animation: blinker 0.5s linear infinite;
+	color: #53c089!important;
+}
+@-webkit-keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+
+.controls a {
+	position: absolute;
+	left: 0px;
+	transition: 0.3s;
+	padding: 15px;
+	width: 130px;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: normal;
+	color: #FFFFFF;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	z-index: 3;
+}
+
+.controls a:hover {
+	left: 0;
+	opacity: 0.8;
+}
+
+.control-reset {
+	top: 20px;
+	background-color: #53c089;
+}
+
+.control-score {
+	top: 80px;
+	background-color: #2196F3;
+}
+
+.game-modal {
+	position: fixed;
+	left: 50%;
+	top: 164px;
+	transform: translate(-50%, 0%);
+	padding: 2rem;
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	z-index: 10;
+	text-align: center;
+}
+.game-modal button {
+	height: 30px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	width: 150px;
+}
+.disable-container {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(90, 90, 90, 0.5);
+	z-index: 9;
+}
+.score-board {
+	position: fixed;
+	left: 50%;
+	top: 1rem;
+	min-width: 500px;
+	min-height: 500px;
+	transform: translate(-50%, 0%);
+	padding: 2rem;
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+}
+.score-body {
+	width: 100%;
+	max-height: 465px;
+	overflow-y: auto;
+}
+.score-close-btn {
+	position: absolute;
+	bottom: 1rem;
+	background-color: #2196F3;
+	outline: none;
+	border: none;
+	min-width: 150px;
+	min-height: 35px;
+	border-radius: 5px;
+	color: #FFFFFF;
+}
+.score-close-btn:hover {
+	opacity: 0.8;
+}
+.scores-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+  
+.scores-table td, .scores-table th {
+	border: 1px solid #ddd;
+	padding: 8px;
+} 
+.scores-table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #53c089;
+	color: #FFFFFF;
+}
+@media screen and (max-width: 600px) {
+	.controls a {
+		left: -140px;
+	}
+	.score-board {
+		min-width: 280px;
+		max-width: 280px;
+		padding: .5rem;
+		font-size: 12px;
+	}
+}

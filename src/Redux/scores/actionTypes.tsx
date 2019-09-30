@@ -1,0 +1,4 @@
+export default {
+    GET_SCORES: 'GET_COMMENTS_SUCCESS',
+    ADD_SCORE: 'GET_COMMENTS_FAILURE',
+};
